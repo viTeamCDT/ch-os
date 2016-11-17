@@ -10,5 +10,5 @@ void kmain()
 		vidmem[x++] = 0x07;
 	}
 	
-	while (true) ;
+	for (;;) ;
 }

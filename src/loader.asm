@@ -11,7 +11,7 @@ extern kmain
 
 kstart:
 	mov esp, stack_space
-	push eax
+	cli
 	call kmain
 .halt:
 	cli

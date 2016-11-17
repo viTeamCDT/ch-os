@@ -1,7 +1,7 @@
 CFLAGS=-std=gnu99 -Iinc -ffreestanding -nostdlib
 LDFLAGS=-melf_i386
 ASMFLAGS=-felf
-OBJECTS=obj/loader.o obj/kernel.o
+OBJECTS=obj/loader.o obj/string.o obj/port.o obj/console.o obj/kernel.o
 
 compile_and_run: compile_and_geniso run
 

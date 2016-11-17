@@ -13,4 +13,15 @@ typedef unsigned long long uint64_t;
 
 typedef unsigned long size_t;
 
+typedef __builtin_va_list va_list;
+
+#define bool _Bool
+#define true 1
+#define false 0
+
+#define va_start(ap,last) __builtin_va_start(ap, last)
+#define va_end(ap) __builtin_va_end(ap)
+#define va_arg(ap,type) __builtin_va_arg(ap, type)
+#define va_copy(dest,src) __builtin_va_copy(dest, src)
+
 #endif

@@ -10,6 +10,7 @@ compile_and_geniso: compile generate_iso clean_o clean_bin
 compile_and_clean: compile clean_o
 
 compile: src/linker.ld $(OBJECTS)
+	mkdir -p bin/
 	@ld $(LDFLAGS) -T $< -o bin/kernel.bin $(OBJECTS)
 
 clean_all: clean_o clean_bin clean_iso
@@ -33,7 +34,9 @@ run: generate_iso
 	@virtualbox --startvm "ChicagoOS" &
 
 obj/%.o: src/%.asm
+	mkdir -p obj/
 	@nasm $(ASMFLAGS) -o $@ $<
 
 obj/%.o: src/%.c
+	mkdir -p obj/
 	@gcc $(CFLAGS) -o $@ -c $<
